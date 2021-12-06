@@ -13,6 +13,8 @@
 		A21F26E6275E266700B8AA0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A21F26E4275E266700B8AA0D /* Main.storyboard */; };
 		A21F26E8275E266A00B8AA0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A21F26E7275E266A00B8AA0D /* Assets.xcassets */; };
 		A21F26EB275E266A00B8AA0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A21F26E9275E266A00B8AA0D /* LaunchScreen.storyboard */; };
+		A21F26F3275E26A800B8AA0D /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21F26F2275E26A800B8AA0D /* Extension.swift */; };
+		A21F26F7275E27C100B8AA0D /* MobileNetV2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A21F26F6275E27C100B8AA0D /* MobileNetV2.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		A21F26E7275E266A00B8AA0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A21F26EA275E266A00B8AA0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A21F26EC275E266A00B8AA0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A21F26F2275E26A800B8AA0D /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		A21F26F6275E27C100B8AA0D /* MobileNetV2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV2.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		A21F26DD275E266700B8AA0D /* MobileNetv2Demo2 */ = {
 			isa = PBXGroup;
 			children = (
+				A21F26F6275E27C100B8AA0D /* MobileNetV2.mlmodel */,
 				A21F26DE275E266700B8AA0D /* AppDelegate.swift */,
 				A21F26E0275E266700B8AA0D /* SceneDelegate.swift */,
 				A21F26E2275E266700B8AA0D /* ViewController.swift */,
@@ -63,6 +68,7 @@
 				A21F26E7275E266A00B8AA0D /* Assets.xcassets */,
 				A21F26E9275E266A00B8AA0D /* LaunchScreen.storyboard */,
 				A21F26EC275E266A00B8AA0D /* Info.plist */,
+				A21F26F2275E26A800B8AA0D /* Extension.swift */,
 			);
 			path = MobileNetv2Demo2;
 			sourceTree = "<group>";
@@ -141,6 +147,8 @@
 				A21F26E3275E266700B8AA0D /* ViewController.swift in Sources */,
 				A21F26DF275E266700B8AA0D /* AppDelegate.swift in Sources */,
 				A21F26E1275E266700B8AA0D /* SceneDelegate.swift in Sources */,
+				A21F26F7275E27C100B8AA0D /* MobileNetV2.mlmodel in Sources */,
+				A21F26F3275E26A800B8AA0D /* Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
