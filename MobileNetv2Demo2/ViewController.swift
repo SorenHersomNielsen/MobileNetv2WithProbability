@@ -16,24 +16,34 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var userOutput: UILabel!
+    
     @IBAction func button(_ sender: Any) {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         
-        let actionSheet = UIAlertController(title: "photo source", message: "Choose a source", preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(title: "Photo source", message: "Choose a source", preferredStyle: .actionSheet)
         
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action:UIAlertAction) in
             imagePickerController.sourceType = .camera
             self.present(imagePickerController, animated: true, completion: nil)
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "photo library", style: .default, handler: { (action:UIAlertAction) in
+        actionSheet.addAction(UIAlertAction(title: "Photo library", style: .default, handler: { (action:UIAlertAction) in
             imagePickerController.sourceType = .photoLibrary
             self.present(imagePickerController, animated: true, completion: nil)
         }))
         
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(actionSheet, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        
+        analyseImage(image: image)
+        imageView.image = image
+        
+        picker.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -53,11 +63,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let classlabelprobs = output.classLabelProbs
         
         
-        var labelProbability: Double {
+        var ModelsProbability: Double {
             let probabilty = classlabelprobs[classlabel] ?? 0.0
-            let roundedProbability = (probabilty * 100)
+            let probabiltyXWith100 = (probabilty * 100)
             
-            return roundedProbability
+            return probabiltyXWith100
         }
+      
+            userOutput.text = "\(classlabel), \(ModelsProbability)"
     }
 }
